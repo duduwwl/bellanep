@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todas as peças — Bella Boutique</title>
+<meta name="description" content="Catálogo completo da Bella Boutique: feminino, masculino e beachwear.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22Georgia,serif%22 font-style=%22italic%22>B</text></svg>">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+<div class="topbar">Site demonstrativo da Bella Boutique · Retire na loja em Nepomuceno-MG</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Bella</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="produtos.html?linha=feminino">Feminino</a>
+      <a href="produtos.html?linha=masculino">Masculino</a>
+      <a href="produtos.html?linha=beachwear">Beachwear</a>
+      <a href="produtos.html">Todas as peças</a>
+      <a href="index.html#visite">Visite a loja</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+      <button class="icon-btn" onclick="openCart()">Sacola <span class="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+  <section class="section-tight">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:28px;">
+        <span class="section-eyebrow">Catálogo</span>
+        <h2 id="pageTitle">Todas as peças</h2>
+        <p>Morena Rosa · Maria.Valentina · SOUL · Morena Rosa Beach</p>
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter-btn" data-linha="">Todas</button>
+        <button class="filter-btn" data-linha="feminino">Feminino</button>
+        <button class="filter-btn" data-linha="masculino">Masculino</button>
+        <button class="filter-btn" data-linha="beachwear">Beachwear</button>
+      </div>
+      <div class="product-grid" id="grid"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-bottom">Site demonstrativo — Bella Boutique © 2026. Pagamentos simulados.</div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Sua sacola</h3><button onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="row"><span>Total</span><span id="cartTotal">R$ 0,00</span></div>
+    <button class="btn btn-dark btn-block" onclick="openCheckout()">Finalizar compra</button>
+  </div>
+</aside>
+
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal" id="checkoutBody"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+<script>
+  function productCard(p){
+    return `<div class="product-card">
+      <div class="product-img">
+        <img src="${p.img}" alt="${p.name}" loading="lazy">
+        <button class="quick-add" onclick="addToCart('${p.id}')">Adicionar à sacola</button>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-price">${formatBRL(p.price)}</div>
+      </div>
+    </div>`;
+  }
+  const params = new URLSearchParams(location.search);
+  let currentLinha = params.get('linha') || '';
+
+  function render(){
+    const list = currentLinha ? PRODUCTS.filter(p => p.linha === currentLinha) : PRODUCTS;
+    document.getElementById('grid').innerHTML = list.map(productCard).join('');
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.toggle('active', b.dataset.linha === currentLinha);
+    });
+    const titles = {feminino:'Feminino', masculino:'Masculino', beachwear:'Beachwear', '':'Todas as peças'};
+    document.getElementById('pageTitle').textContent = titles[currentLinha];
+  }
+  document.getElementById('filters').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    currentLinha = btn.dataset.linha;
+    const url = new URL(location);
+    if (currentLinha) url.searchParams.set('linha', currentLinha); else url.searchParams.delete('linha');
+    history.replaceState({}, '', url);
+    render();
+  });
+  render();
+</script>
+</body>
+</html>

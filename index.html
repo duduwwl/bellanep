@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Boutique — Moda Feminina, Masculina e Beachwear | Nepomuceno-MG</title>
+<meta name="description" content="Bella Boutique, em Nepomuceno-MG. Moda feminina, masculina e beachwear das marcas Morena Rosa, Maria.Valentina e SOUL. Site demonstrativo.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 font-family=%22Georgia,serif%22 font-style=%22italic%22>B</text></svg>">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<a href="#conteudo" class="skip-link">Ir para o conteúdo</a>
+
+<div class="topbar">Site demonstrativo da Bella Boutique · Retire na loja em Nepomuceno-MG</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">Bella</a>
+    <nav class="main-nav" id="mainNav">
+      <a href="produtos.html?linha=feminino">Feminino</a>
+      <a href="produtos.html?linha=masculino">Masculino</a>
+      <a href="produtos.html?linha=beachwear">Beachwear</a>
+      <a href="produtos.html">Todas as peças</a>
+      <a href="#visite">Visite a loja</a>
+    </nav>
+    <div class="header-actions">
+      <button class="nav-toggle" onclick="toggleNav()" aria-label="Menu">☰</button>
+      <button class="icon-btn" onclick="openCart()">Sacola <span class="cart-count">0</span></button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- HERO -->
+  <section class="hero">
+    <img src="fotos/look-preto-wrap.jpg" alt="Modelo vestindo top preto com amarração, coleção Bella Boutique" fetchpriority="high">
+    <div class="hero-content">
+      <span class="hero-eyebrow">Nepomuceno · MG</span>
+      <h1>O verão chegou<br>em Nepomuceno</h1>
+      <p class="lead">Moda feminina, masculina e beachwear das marcas Morena Rosa, Maria.Valentina e SOUL — direto da Bella para o seu guarda-roupa.</p>
+      <div class="hero-ctas">
+        <a href="produtos.html" class="btn btn-light">Ver a coleção</a>
+        <a href="https://wa.me/5535998521829" target="_blank" rel="noopener" class="btn btn-solid">Chamar no WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="brand-strip">
+    <div class="marquee">
+      <span>Morena Rosa</span><span>Maria.Valentina</span><span>SOUL</span><span>Morena Rosa Beach</span>
+      <span>Morena Rosa</span><span>Maria.Valentina</span><span>SOUL</span><span>Morena Rosa Beach</span>
+    </div>
+  </div>
+
+  <!-- VITRINES -->
+  <section class="section" id="vitrines">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Coleção</span>
+        <h2>Três vitrines, um só estilo</h2>
+      </div>
+      <div class="vitrines">
+        <a class="vitrine-card" href="produtos.html?linha=feminino">
+          <img src="fotos/look-renda-dourada.jpg" alt="Moda feminina Bella Boutique">
+          <div class="vitrine-label"><span class="cat">Vitrine 01</span><h3>Feminino</h3></div>
+        </a>
+        <a class="vitrine-card" href="produtos.html?linha=masculino">
+          <img src="fotos/masculino-polo-branca.jpg" alt="Moda masculina SOUL">
+          <div class="vitrine-label"><span class="cat">Vitrine 02</span><h3>Masculino</h3></div>
+        </a>
+        <a class="vitrine-card" href="produtos.html?linha=beachwear">
+          <img src="fotos/look-animal-print.jpg" alt="Beachwear Bella Boutique">
+          <div class="vitrine-label"><span class="cat">Vitrine 03</span><h3>Beachwear</h3></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOOKBOOK MARIA VALENTINA -->
+  <section class="section section-tight" id="lookbook" style="background:var(--cream-2);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Lookbook</span>
+        <h2>O verão está chegando — Maria.Valentina</h2>
+        <p>Peças exclusivas pensadas para acompanhar cada momento da estação, com a energia do sol e a brisa do mar.</p>
+      </div>
+      <div class="product-grid" id="lookbookGrid"></div>
+    </div>
+  </section>
+
+  <!-- MONTE SEU LOOK -->
+  <section class="section" id="monte">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Monte seu look</span>
+        <h2>Combine e leve o visual completo</h2>
+      </div>
+      <div class="look-builder">
+        <div class="look-piece"><img src="fotos/look-listrado-shorts.jpg" alt="Parte de cima do look"></div>
+        <div class="look-piece"><img src="fotos/look-jeans-casual.jpg" alt="Parte de baixo do look"></div>
+        <div class="look-piece"><img src="fotos/look-preto-wrap.jpg" alt="Detalhe do look"></div>
+        <div class="look-summary">
+          <div class="rows">
+            <div><span>Conjunto tricot listrado</span><span>R$ 279,90</span></div>
+            <div><span>Camisa + jeans reto</span><span>R$ 319,90</span></div>
+            <div><span>Top preto amarração</span><span>R$ 269,90</span></div>
+          </div>
+          <div class="total"><span>Total</span><span>R$ 869,70</span></div>
+          <button class="btn btn-dark btn-block" onclick="addLookBundle()">Levar o look completo</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="section-tight" style="background:var(--cream-2);">
+    <div class="wrap">
+      <div class="destaques">
+        <div class="destaque"><div class="destaque-img"><img src="fotos/look-rosa-festa.jpg" alt="Fashion Day"></div><span>Fashion Day</span></div>
+        <div class="destaque"><div class="destaque-img"><img src="fotos/masculino-polo-branca.jpg" alt="Masculino"></div><span>Masculino</span></div>
+        <div class="destaque"><div class="destaque-img"><img src="fotos/look-listras-marinho.jpg" alt="Pijamas"></div><span>Pijamas</span></div>
+        <div class="destaque"><div class="destaque-img"><img src="fotos/maria-valentina-destaque.jpg" alt="Maria Valentina"></div><span>Maria.Valentina</span></div>
+        <div class="destaque"><div class="destaque-img"><img src="fotos/look-estampa-vermelha.jpg" alt="Morena Rosa"></div><span>Morena Rosa</span></div>
+        <div class="destaque"><div class="destaque-img"><img src="fotos/look-terracota-conjunto.jpg" alt="Localização"></div><span>Localização</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL: MASCULINO SOUL -->
+  <section class="section">
+    <div class="wrap">
+      <div class="editorial">
+        <img src="fotos/masculino-soul-polo.jpg" alt="Linha masculina SOUL">
+        <div class="text-side">
+          <span class="section-eyebrow">Linha SOUL</span>
+          <h2>#FaçaAcontecer</h2>
+          <p>Polos, camisas de linho e peças versáteis para o dia a dia e para os fins de semana na cidade. A linha masculina da Bella chegou para ficar.</p>
+          <a href="produtos.html?linha=masculino" class="btn btn-outline-dark" style="margin-top:22px;">Ver masculino</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL REVERSE: MARIA VALENTINA -->
+  <section class="section reverse" style="background:var(--cream-2);">
+    <div class="wrap">
+      <div class="editorial">
+        <div class="text-side">
+          <span class="section-eyebrow">Marca em destaque</span>
+          <h2>Maria.Valentina chegando</h2>
+          <p>O preto e branco continua sendo um dos encontros mais bonitos da moda — contornos marcados, cintura definida e movimento em cada peça da nova temporada.</p>
+          <a href="produtos.html?linha=feminino" class="btn btn-outline-dark" style="margin-top:22px;">Ver coleção feminina</a>
+        </div>
+        <img src="fotos/editorial-verao-mv.jpg" alt="Campanha Maria.Valentina — O verão está chegando">
+      </div>
+    </div>
+  </section>
+
+  <!-- FASHION DAY -->
+  <section class="section" id="fashionday">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">Bella nos bastidores</span>
+        <h2>Fashion Day na loja</h2>
+        <p>Um dia de moda, café e boas conversas direto da nossa loja em Nepomuceno. Acompanhe os próximos no <a href="https://www.instagram.com/bellaboutique_nep/" target="_blank" rel="noopener" style="text-decoration:underline;">@bellaboutique_nep</a>.</p>
+      </div>
+      <div class="fd-grid">
+        <img class="big" src="fotos/look-preto-festa.jpg" alt="Fashion Day Bella Boutique">
+        <img src="fotos/look-rosa-festa.jpg" alt="Look de festa">
+        <img src="fotos/look-estampa-noturna.jpg" alt="Look estampado">
+        <img src="fotos/look-azul-longo.jpg" alt="Vestido azul longo">
+        <img src="fotos/look-amarelo-seda.jpg" alt="Conjunto amarelo">
+      </div>
+    </div>
+  </section>
+
+  <!-- NO FEED -->
+  <section class="section section-tight" style="background:var(--cream-2);">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-eyebrow">@bellaboutique_nep</span>
+        <h2>No feed</h2>
+      </div>
+      <div class="feed-grid" id="feedGrid"></div>
+    </div>
+  </section>
+
+  <!-- VISITE A BELLA -->
+  <section class="visit" id="visite">
+    <div class="wrap">
+      <div class="visit-grid">
+        <div>
+          <span class="section-eyebrow">Loja física</span>
+          <h2>Visite a Bella</h2>
+          <p style="color:#cfc3b2; margin-top:14px; line-height:1.7;">Boutique de moda feminina, masculina e beachwear no coração de Nepomuceno. Venha tomar um café e experimentar as novidades da estação.</p>
+          <div class="visit-info-row"><div class="label">Endereço</div><div class="val">Rua Dr. Ernane Vilela Lima, 125 — Nepomuceno/MG, 37250-000</div></div>
+          <div class="visit-info-row"><div class="label">Horário</div><div class="val">Seg a Sex 9h–18h · Sáb 9h–13h</div></div>
+          <div class="visit-info-row"><div class="label">Telefone</div><div class="val">(35) 9 9852-1829</div></div>
+          <div class="visit-ctas">
+            <a class="btn btn-solid" href="https://www.google.com/maps/search/?api=1&query=Rua+Dr.+Ernane+Vilela+Lima,+125,+Nepomuceno+MG" target="_blank" rel="noopener">Como chegar</a>
+            <a class="btn btn-light" href="https://wa.me/5535998521829" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="demo-note">Site demonstrativo — pagamentos e pedidos simulados, sem processamento real.</div>
+        </div>
+        <iframe src="https://maps.google.com/maps?q=Rua%20Dr.%20Ernane%20Vilela%20Lima%2C%20125%2C%20Nepomuceno%20MG&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" title="Mapa até a Bella Boutique"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:var(--cream);">Bella</div>
+        <p style="margin-top:14px; font-size:.85rem; opacity:.8; max-width:260px;">Moda feminina, masculina e beachwear em Nepomuceno-MG. Marcas: Morena Rosa, Maria.Valentina e SOUL.</p>
+      </div>
+      <div>
+        <h4>Categorias</h4>
+        <ul>
+          <li><a href="produtos.html?linha=feminino">Feminino</a></li>
+          <li><a href="produtos.html?linha=masculino">Masculino</a></li>
+          <li><a href="produtos.html?linha=beachwear">Beachwear</a></li>
+          <li><a href="produtos.html">Acessórios</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Loja</h4>
+        <ul>
+          <li>Rua Dr. Ernane Vilela Lima, 125</li>
+          <li>Nepomuceno — MG</li>
+          <li>(35) 9 9852-1829</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Siga</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/bellaboutique_nep/" target="_blank" rel="noopener">@bellaboutique_nep</a></li>
+          <li><a href="https://wa.me/5535998521829" target="_blank" rel="noopener">WhatsApp</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">Site demonstrativo — Bella Boutique © 2026. Pagamentos simulados.</div>
+  </div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Sua sacola</h3><button onclick="closeCart()">✕</button></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-foot">
+    <div class="row"><span>Total</span><span id="cartTotal">R$ 0,00</span></div>
+    <button class="btn btn-dark btn-block" onclick="openCheckout()">Finalizar compra</button>
+  </div>
+</aside>
+
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal" id="checkoutBody"></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script src="js/products.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+<script>
+  function productCard(p){
+    return `<div class="product-card">
+      <div class="product-img">
+        <a href="produtos.html?linha=${p.linha}"><img src="${p.img}" alt="${p.name}" loading="lazy"></a>
+        <button class="quick-add" onclick="addToCart('${p.id}')">Adicionar à sacola</button>
+      </div>
+      <div class="product-info">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="product-price">${formatBRL(p.price)}</div>
+      </div>
+    </div>`;
+  }
+  document.getElementById('lookbookGrid').innerHTML =
+    PRODUCTS.filter(p => p.brand === 'Maria.Valentina').slice(0,6).map(productCard).join('');
+
+  const feedPhotos = ['look-preto-wrap.jpg','look-amarelo-seda.jpg','masculino-polo-branca.jpg','look-animal-print.jpg','look-rosa-festa.jpg','maria-valentina-destaque.jpg','look-jeans-casual.jpg','look-terracota-conjunto.jpg','look-estampa-vermelha.jpg','masculino-linho-praia.jpg','look-preto-festa.jpg','look-renda-dourada.jpg'];
+  document.getElementById('feedGrid').innerHTML = feedPhotos.map(f =>
+    `<a href="https://www.instagram.com/bellaboutique_nep/" target="_blank" rel="noopener"><img src="fotos/${f}" alt="Post Instagram Bella Boutique" loading="lazy"></a>`
+  ).join('');
+
+  function addLookBundle(){
+    addToCart('p05'); addToCart('p12'); addToCart('p17');
+    openCart();
+  }
+</script>
+</body>
+</html>
